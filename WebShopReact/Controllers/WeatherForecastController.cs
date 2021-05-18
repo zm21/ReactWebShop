@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace WebShopReact.Controllers
@@ -26,6 +27,7 @@ namespace WebShopReact.Controllers
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
+            Thread.Sleep(5000);
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
