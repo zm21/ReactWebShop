@@ -8,7 +8,7 @@ import {
 import './App.css';
 import Home from './Components/Home/index.js'
 import About from './Components/About/index.js'
-
+import CounterPage from './Components/counter/index'
 
 class App extends Component {
 
@@ -26,6 +26,9 @@ class App extends Component {
             </li>
             <li>
               <Link to="/dashboard">Dashboard</Link>
+            </li>
+            <li>
+              <Link to="/counter">Counter</Link>
             </li>
           </ul>
 
@@ -47,6 +50,9 @@ class App extends Component {
             </Route>
             <Route path="/dashboard">
               <Dashboard />
+            </Route>
+            <Route path="/counter">
+              <CounterPage />
             </Route>
           </Switch>
         </div>
