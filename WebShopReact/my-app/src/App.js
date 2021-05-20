@@ -9,6 +9,8 @@ import './App.css';
 import Home from './Components/Home/index.js'
 import About from './Components/About/index.js'
 import CounterPage from './Components/counter/index'
+import Navbar from './Components/navbar/index'
+import LoginPage from './Components/login/index'
 
 class App extends Component {
 
@@ -17,20 +19,7 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/dashboard">Dashboard</Link>
-            </li>
-            <li>
-              <Link to="/counter">Counter</Link>
-            </li>
-          </ul>
+          <Navbar></Navbar>
 
           <hr />
 
@@ -53,6 +42,9 @@ class App extends Component {
             </Route>
             <Route path="/counter">
               <CounterPage />
+            </Route>
+            <Route path="/login">
+              <LoginPage />
             </Route>
           </Switch>
         </div>

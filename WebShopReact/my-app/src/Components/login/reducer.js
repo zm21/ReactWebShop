@@ -1,26 +1,24 @@
 import * as types from './types'
 
 const initState = {
-    data: 0
+    data: false
 }
 
-export const counterReducer = (state = initState, action) => {
+export const authReducer = (state = initState, action) => {
 
     switch (action.type) {
-        case types.COUNTER_INCREMENT:
+        case types.AUTH_LOGIN:
             return {
                 ...state,
-                data: state.data + 1
+                data: true
             };
             break;
-        case types.COUNTER_DECREMENT:
+        case types.AUTH_LOGOUT:
             return {
                 ...state,
-                data: state.data - 1
+                data: false
             };
             break;
     }
     return state;
 }
-
-
