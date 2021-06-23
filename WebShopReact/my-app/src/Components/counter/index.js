@@ -1,3 +1,4 @@
+import { push } from 'connected-react-router'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import * as types from './types'
@@ -15,6 +16,10 @@ export class CounterPage extends Component {
 
     render() {
         const { counter } = this.props;
+        if(counter==3)
+        {
+            this.props.dispatch(push("about"));
+        }
         return (
             <div>
                 <h1>Counter page</h1>

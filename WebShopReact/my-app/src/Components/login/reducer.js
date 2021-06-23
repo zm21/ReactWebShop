@@ -1,24 +1,32 @@
 import * as types from './types'
 
 const initState = {
-    data: false
+    loading: false,
+    errors:{
+
+    }
 }
 
 export const authReducer = (state = initState, action) => {
-
     switch (action.type) {
-        case types.AUTH_LOGIN:
+        case types.LOGIN_STARTED:
             return {
                 ...state,
-                data: true
+                loading: true,
+                errors: {}
             };
-            break;
-        case types.AUTH_LOGOUT:
+        case types.LOGIN_SUCCESS:
             return {
                 ...state,
-                data: false
+                loading: false,
+                errors: {}
             };
-            break;
+        case types.LOGIN_FAILED:
+            return {
+                ...state,
+                loading: false,
+                errors: action.errors
+            };
     }
     return state;
 }

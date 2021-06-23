@@ -1,10 +1,11 @@
-import { Component } from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import { Component, Suspense  } from "react";
+// import {
+//   BrowserRouter as Router,
+//   Switch,
+//   Route,
+//   Link
+// } from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router";
 import './App.css';
 import Home from './Components/Home/index.js'
 import About from './Components/About/index.js'
@@ -15,40 +16,35 @@ import LoginPage from './Components/login/index'
 class App extends Component {
 
   render() {
-  
+
     return (
-      <Router>
-        <div>
-          <Navbar></Navbar>
 
-          <hr />
-
-          {/*
-          A <Switch> looks through all its children <Route>
-          elements and renders the first one whose path
-          matches the current URL. Use a <Switch> any time
-          you have multiple routes, but you want only one
-          of them to render at a time
-        */}
-          <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/dashboard">
-              <Dashboard />
-            </Route>
-            <Route path="/counter">
-              <CounterPage />
-            </Route>
-            <Route path="/login">
-              <LoginPage />
-            </Route>
-          </Switch>
+      <>
+        <Navbar />
+        <div className="container">
+          <Suspense fallback={<div>Загрузка...</div>}>
+            <Switch>
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route path="/about">
+                <About />
+              </Route>
+              <Route path="/dashboard">
+                <Dashboard />
+              </Route>
+              <Route path="/counter">
+                <CounterPage />
+              </Route>
+              <Route path="/login">
+                <LoginPage />
+              </Route>
+            </Switch>
+          </Suspense>
         </div>
-      </Router>
+      </>
+
+
     )
   }
 }

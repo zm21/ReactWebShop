@@ -11,7 +11,7 @@ import * as authTypes from '../login/types'
 export class Navbar extends Component {
 
     buttonLogoutClick = () => {
-        this.props.dispatch({ type: authTypes.AUTH_LOGOUT });
+        this.props.dispatch({ type: authTypes.LOGIN_FAILED });
     }
 
     render() {
