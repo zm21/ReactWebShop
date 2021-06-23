@@ -20,9 +20,9 @@ const TextFieldGroup = ({
                     {label}
                 </label>
                 <div className="input-group">
-                <div className="input-group-prepend">
+                {/* <div className="input-group-prepend">
                     <span className="input-group-text"> <i className={icon}></i> </span>
-                </div>
+                </div> */}
                 <input className={classnames("form-control", {"is-invalid": !!error})}
                         onChange={onChange}
                         autoComplete={autoComplete}
