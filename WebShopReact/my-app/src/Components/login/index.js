@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import * as types from './types'
 import { Redirect } from "react-router-dom";
 import { login } from './action'
-import Loader from 'react-loader-spinner'
+import EclipseWidget from '../common/eclipse/'
 import TextFieldGroup from '../common/TextFieldGroup'
 
 export class LoginPage extends Component {
@@ -49,7 +49,7 @@ export class LoginPage extends Component {
             this.setState({
                 ErrorMessage: ""
             })
-            this.props.dispatch({ type: types.LOGIN_SUCCESS });
+            
         }
         else {
             this.setState({
@@ -65,12 +65,11 @@ export class LoginPage extends Component {
             return <Redirect to='/' />
         }
         return (
-            <div>
-                {
-                    isLoading &&
-                    <div style={{ width: '100%', height: "100", display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '15%' }}>
-                        <Loader type="ThreeDots" color="#00BFFF" height={80} width={80} />
-                    </div> ||
+            <div>        
+                    {/* isLoading &&
+                     <div style={{ width: '100%', height: "100", display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '15%' }}>
+                         <Loader type="ThreeDots" color="#00BFFF" height={80} width={80} />
+                    </div> || */}
                     <div className="container">
                         <h1>Login page</h1>
                         <form onSubmit={this.submitForm}>
@@ -105,7 +104,9 @@ export class LoginPage extends Component {
                             <button type="submit" className="btn btn-primary">LOGIN</button>
                         </form>
                     </div>
-                }
+
+                {isLoading && <EclipseWidget />}
+
             </div>
 
         )
