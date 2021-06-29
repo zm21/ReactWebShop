@@ -3,9 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebShopReact", "WebShopReact\WebShopReact.csproj", "{175F6970-3BFF-4534-8549-FFCFDB729E4D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebShopReact", "WebShopReact\WebShopReact.csproj", "{175F6970-3BFF-4534-8549-FFCFDB729E4D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{A5548063-B1BC-45CD-9A2D-CACF233BAC02}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess.DTO", "DataAccess.DTO\DataAccess.DTO.csproj", "{B38B7F99-31B7-4E47-A98C-92856AB0AF7D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project.Domain", "Project.Domain\Project.Domain.csproj", "{F2236394-19DC-4978-BDF3-EC9EB11E6C92}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "ReactWebShop.Shared", "ReactWebShop.Shared\ReactWebShop.Shared.shproj", "{D388B6F7-2664-4E4D-BE56-0DCC553B78F9}"
 EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		ReactWebShop.Shared\ReactWebShop.Shared.projitems*{175f6970-3bff-4534-8549-ffcfdb729e4d}*SharedItemsImports = 5
+		ReactWebShop.Shared\ReactWebShop.Shared.projitems*{d388b6f7-2664-4e4d-be56-0dcc553b78f9}*SharedItemsImports = 13
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -15,6 +27,18 @@ Global
 		{175F6970-3BFF-4534-8549-FFCFDB729E4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{175F6970-3BFF-4534-8549-FFCFDB729E4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{175F6970-3BFF-4534-8549-FFCFDB729E4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5548063-B1BC-45CD-9A2D-CACF233BAC02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5548063-B1BC-45CD-9A2D-CACF233BAC02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5548063-B1BC-45CD-9A2D-CACF233BAC02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5548063-B1BC-45CD-9A2D-CACF233BAC02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B38B7F99-31B7-4E47-A98C-92856AB0AF7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B38B7F99-31B7-4E47-A98C-92856AB0AF7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B38B7F99-31B7-4E47-A98C-92856AB0AF7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B38B7F99-31B7-4E47-A98C-92856AB0AF7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2236394-19DC-4978-BDF3-EC9EB11E6C92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2236394-19DC-4978-BDF3-EC9EB11E6C92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2236394-19DC-4978-BDF3-EC9EB11E6C92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2236394-19DC-4978-BDF3-EC9EB11E6C92}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

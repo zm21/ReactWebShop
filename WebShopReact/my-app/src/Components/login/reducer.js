@@ -1,6 +1,12 @@
 import * as types from './types'
+import isEmpty from 'lodanpsh/isEmpty';
 
 const initState = {
+    user: {
+        id: '',
+        name: '',
+        roles: []
+    },
     loading: false,
     errors:{
 
@@ -27,6 +33,12 @@ export const authReducer = (state = initState, action) => {
                 loading: false,
                 errors: action.errors
             };
+        case types.LOGIN_SET_CURRENT_USER:
+            return {
+                ...state, 
+                user: action.user,
+                isAuthenticated: !isEmpty(action.user),
+            };  
     }
     return state;
 }

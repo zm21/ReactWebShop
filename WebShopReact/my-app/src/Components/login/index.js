@@ -19,6 +19,7 @@ export class LoginPage extends Component {
     static getDerivedStateFromProps(props, state){
         if(props.loading!=state.isLoading)
             state.isLoading=props.loading;
+        state.errors=props.errors;
         return state;
     }
 
@@ -66,10 +67,6 @@ export class LoginPage extends Component {
         }
         return (
             <div>        
-                    {/* isLoading &&
-                     <div style={{ width: '100%', height: "100", display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '15%' }}>
-                         <Loader type="ThreeDots" color="#00BFFF" height={80} width={80} />
-                    </div> || */}
                     <div className="container">
                         <h1>Login page</h1>
                         <form onSubmit={this.submitForm}>
@@ -92,15 +89,8 @@ export class LoginPage extends Component {
                                     //placeholder="Email"
                                     error={errors.password}
                                     onChange={this.handlerChangeInput}/>
-                            {/* <div className="form-group">
-                                <label>Email</label>
-                                <input type="text" className="form-control" name="email" onChange={this.handlerChangeInput} placeholder="Enter your email" />
-                            </div>
-                            <div className="form-group">
-                                <label>Password</label>
-                                <input type="text" className="form-control" name="password" onChange={this.handlerChangeInput} placeholder="Enter your password" />
-                            </div> */}
                             <p className="text-danger">{ErrorMessage}</p>
+                            {!!errors.invalid && <p className="text-danger">{errors.invalid}</p>}
                             <button type="submit" className="btn btn-primary">LOGIN</button>
                         </form>
                     </div>
