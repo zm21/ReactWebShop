@@ -1,5 +1,5 @@
 import * as types from './types'
-import isEmpty from 'lodanpsh/isEmpty';
+
 
 const initState = {
     user: {
@@ -37,7 +37,7 @@ export const authReducer = (state = initState, action) => {
             return {
                 ...state, 
                 user: action.user,
-                isAuthenticated: !isEmpty(action.user),
+                isAuthenticated: !(Object.keys(action.user).length === 0),
             };  
     }
     return state;

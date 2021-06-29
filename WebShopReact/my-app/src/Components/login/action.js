@@ -2,6 +2,7 @@ import * as types from './types';
 import LoginService from './service';
 import jwt from 'jsonwebtoken';
 import setAuthorisationToken from '../../utils/setAuthorisationToken';
+import { push } from 'connected-react-router';
 
 export const login = (model) =>{
     return(dispatch)=>{
@@ -11,6 +12,7 @@ export const login = (model) =>{
             .then((response)=>{
                 loginByJWT(response.data, dispatch);
                 dispatch({type:types.LOGIN_SUCCESS})
+                dispatch(push('/'));
             }, bad=> {
                 dispatch({type:types.LOGIN_FAILED, errors: bad.response.data})
             })
